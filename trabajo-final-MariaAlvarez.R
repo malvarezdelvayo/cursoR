@@ -195,4 +195,11 @@ ggplot(datostotalesrangos, aes(x = rangos, y = Cantidad)) +
   theme_minimal()
   
 
+#Ingresos por sexo:
 
+eurosingresoSEXO <- datostotales %>%
+  select(B1, H5) %>%
+  group_by(B1) %>%
+  summarise(avg = mean(H5))
+
+head(eurosingresoSEXO)
